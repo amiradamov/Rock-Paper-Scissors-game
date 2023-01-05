@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="mystyle1.css">
+</head>
+<body>
+    <div id="backgroundd" style="border: 1px solid black">
+        <div id="player1" style="width: 300px; height: 300px; border: 1px solid red; float: left;">
+               <p id="player1_move"><em></em</p>
+        </div>
+
+        <div id="player2_move" style="width: 300px; height: 300px; border: 1px solid green; float: left;">
+                <p id="player1_move"><em>hey</em></p>
+        </div>
+
+        <h2 id="winner">won</h2>                                   
+    </div>
+    <script>
+        var moves = ["Rock","Paper", "Scissors"];
+        player1 = moves[Math.floor(Math.random()*moves.length)];
+        player2 = moves[Math.floor(Math.random()*moves.length)];
+
+        document.getElementById("player1_move").getElementsByTagName("em")[0].innerHTML = player1;
+        document.getElementById("player2_move").getElementsByTagName("em")[0].innerHTML = player2;
+
+        if((player1 == moves[0] && player2 == moves[2]) || 
+            (player1 == moves[1] && player2 == moves[0]) ||
+            (player1 == moves[2] && player2 == moves[1])){
+            document.getElementById('winner').innerHTML = "Player 1 wins"
+        }
+        else if((player2 == moves[0] && player1 == moves[2]) || 
+            (player2 == moves[1] && player1 == moves[0]) ||
+            (player2 == moves[2] && player1 == moves[1])){
+            document.getElementById('winner').innerHTML = "Player 2 wins"
+        }else{
+            document.getElementById('winner').innerHTML = "A Draw"
+        }
+    </script>
+</body>
+</html>
